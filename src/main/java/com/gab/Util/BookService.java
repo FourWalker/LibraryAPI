@@ -88,8 +88,6 @@ public class BookService {
     	}
     	
     	bbook.setReturnedDate(returnedBook.returnedDate);
-    	
-    	bbook.setReturnedDate(java.time.LocalDate.now());
     	borrowedBookRepo.save(bbook);
     	
     	
