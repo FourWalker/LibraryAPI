@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.gab.TestData.DataService;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -54,15 +53,6 @@ public class Borrower {
     	
     }
     
-    //Returns the borrower id if only the name and email address is suplemented
-    //This is needed for BorrowedBook class to form a "Borrowing" relationship with Borrower and the Book.
-    @JsonIgnore
-    public Integer getIdByNameandEmail() {
-		
-    	Borrower b = DataService.borrowersDB.stream().filter(borrower -> borrower.getName().equals(this.name) && borrower.getEmail().equals(this.email)).findFirst().orElse(null);
-    	borrowerid = b != null ? b.borrowerid() : null;
-    	return borrowerid;
-	}
 
 
 	public Integer borrowerid() {

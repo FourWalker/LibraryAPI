@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+
 import java.time.LocalDate; 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -20,7 +22,8 @@ public class BorrowedBook {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private long borrowerid;
     
-    @Min(value=0,message="Book Id is required")
+    
+    @NotNull(message="Book Id is required")
     @JsonProperty("bookid")
     private long bookid;
     

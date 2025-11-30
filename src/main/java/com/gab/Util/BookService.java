@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 
 
 package com.gab.Util;
@@ -18,7 +14,6 @@ import com.gab.Models.BorrowedBook;
 import com.gab.Models.BorrowedBookRepo;
 import com.gab.Models.BorrowerRepo;
 import com.gab.Models.ReturnedBook;
-import com.gab.TestData.DataService;
 
 /**
  *
@@ -39,12 +34,6 @@ public class BookService {
 		this.borrowerRepo = borrowerRepo;
 	}
 
-    public static boolean isBorrowed(long bookid){
-    	
-    	return DataService.borrowedbooksDB.stream().filter(borrowedbook -> borrowedbook.getbookid() == bookid && borrowedbook.getReturnedDate() == null).findAny().orElse(null) == null;
-        
-    }
-    
     
     public List<Book> getAllBooks(){ 
     	return bookRepo.findAll();   

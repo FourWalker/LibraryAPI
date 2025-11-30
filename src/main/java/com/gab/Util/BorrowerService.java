@@ -35,10 +35,4 @@ public class BorrowerService {
 		return borrowerRepo.save(borrower);
 	}
 	
-	public static boolean validateBorrower(Borrower borrower) {
-		if(borrower.getIdByNameandEmail() != null) {
-			return true;
-		}
-		return false;
-	}
 }
