@@ -1,12 +1,12 @@
 LibraryAPI – Documentation
 
-This API simulates a basic library borrow and return book system, it lets the API user borrow a book on behalf of the “Borrower”, the Book can be borrowed using its Book ID (bookid), a borrow transaction (borrowBook) needs the email and name of the registered Borrower together with the Book ID.
+This API simulates a basic library borrow and return book system, it lets the API user borrow a book on behalf of the “Borrower”, the Book can be borrowed using its Book ID (bookid); a borrow transaction (borrowBook) needs the email and name of the registered Borrower together with the Book ID.
 A table that contains borrow transaction (borrowedbook table) uses borrowerid and bookid to relate Book and Borrower table.  If the Email and Name does not match an existing borrower record provided in the “borrowBook” transaction, it will not proceed with the transaction as the Name and Email will be used as an argument to find a borrower’s id (borrowerid). 
 ISBN number uniquely identifies a book in the following way: 2 books with the same title and same author but different ISBN numbers are considered, 2 books with the same ISBN numbers must have the same title and same author
 Multiple copies of books with same ISBN number are allowed in the system.
 
 Instructions on running the Application
-The datasource of the application has predefined datasource credentials and url. You can either run the application via persistence or create a docker container using this command and run it with MySql with the predefined credential and url.
+The application has predefined datasource credentials and url. You can either run the application via persistence or create a docker container using this command and run it with MySql with the predefined credential and url.
 
 
 docker run --detach --env MYSQL_ROOT_PASSWORD=admin --env MYSQL_USER=librarian --env MYSQL_PASSWORD=librarian --env MYSQL_DATABASE=library --name mysqldocker --publish 3307:3306 mysql:8-oracle
