@@ -27,9 +27,13 @@ This handles creating / registering a new book for the library record. It accept
 
 _Request Body_
 {
+
   "title": "string",
+ 
   "author": "string",
+ 
   "isbn": 1
+
 }
 
 
@@ -71,11 +75,17 @@ _Validations_
 This handles book borrowing system, it accepts Borrower Email and Name, Book ID and BorrowDate (optional, will return current time if not specified) from Request Body.
 
 _Request Body_
+
 {
+ 
   "borrowDate": "2025-12-03",
+ 
   "name": "string",
+
   "email": "user@example.com",
+
   "bookid": 0
+
 }
  
 _Validations_
@@ -94,9 +104,13 @@ _Validations_
 This handles book returning system, it accepts the Book ID and Returned Date (optional, will return currect date if not specified) from Request Body.
 
 _Request Body_
+
 {
+ 
   "returnedDate": "2025-12-03",
+
   "bookId": 1
+
 }
  
 _Validations_
