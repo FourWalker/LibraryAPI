@@ -24,13 +24,16 @@ By default, content returned by the end points are in JSON format, you can reque
 **/Library/registerBook **
 This handles creating / registering a new book for the library record. It accepts book title, author, and ISBN from Request Body
 
+
 _Request Body_
 {
   "title": "string",
   "author": "string",
   "isbn": 1
 }
- 
+
+
+
 _Validations_
 •	2 books with the same title and same author but different ISBN numbers are considered as different books
 •	2 books with the same ISBN numbers must have the same title and same author
@@ -41,19 +44,25 @@ _Validations_
  
 
 
+
+
+
 **/Library/registerBorrower**
 This handles borrower registration for the library record, it accepts email and name from Request Body.
+
 
 _Request Body_
 {
   "name": "string",
   "email": "user@example.com"
 }
+
  
 _Validations_
 •	Name and Email is required, it will return an error message specifying which of the required fields are missing or if the email has incorrect format.
 •	If a new record matches an existing borrower with same name and email, it will return an error message indicating that a record of the borrower already exists.
  
+
 
 
 
@@ -79,6 +88,8 @@ _Validations_
 
 
 
+
+
 /Library/returnBook
 This handles book returning system, it accepts the Book ID and Returned Date (optional, will return currect date if not specified) from Request Body.
 
@@ -92,8 +103,14 @@ _Validations_
 •	bookId is required and will return an error message if its missing.
 •	If the Book is not borrowed / returned / does not exist, it will return an error message saying that the book is either not borrowed or does not exist.
 
+
+
+
+
+
 **/Library/getAllBooks**
 This returns all books saved in table. No Request Body or parameter required.
+
 
 
  
